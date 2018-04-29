@@ -25,14 +25,18 @@ function sub_edu_data = edu_sub(data, edu_code)
         end
         % get all of the rows with row numbers in chosen_rows
         % preallocate size of cell array
-        sub_edu_data = cell(length(chosen_rows), c);
-        count2 = 1;
-        for j = 1:length(chosen_rows)
-            for k = 1:c
-                sub_edu_data{count2,k} = data{chosen_rows(j),k};
+        if(chosen_rows(1) == 0)
+            sub_edu_data = "NO DATA";
+        else
+            sub_edu_data = cell(length(chosen_rows), c);
+            count2 = 1;
+            for j = 1:length(chosen_rows)
+                for k = 1:c
+                    sub_edu_data{count2,k} = data{chosen_rows(j),k};
+                end
+                count2 = count2 + 1; 
+                %fprintf("%d\n", data{r,8}); (used this as a test)
             end
-            count2 = count2 + 1; 
-            %fprintf("%d\n", data{r,8}); (used this as a test)
         end
     end
 end
