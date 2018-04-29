@@ -1,4 +1,4 @@
-function data_org = cvs_processing()
+function data_org = csv_processing()
     data = csv2cell('employment_projections.csv', 'fromfile');
     % Cols: 1) Occupation Title 2) SOC Code 3) Employment 2016 (thousands) 4) Employment 2026 (thousands) 
     %       5) Employment Change 2016 - 2026 (thousands) 6) Employment change 2016-2026 (%)

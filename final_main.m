@@ -20,6 +20,7 @@ sub_int_data = int_sub(data, [5 6]); % by interest, yay it works!!! :))
 
 % write function using all criteria to get the specified jobs (takes
 % arguments for all of the subsetting functions (EDU, INTEREST, SAL)
+criteria_search(data, 2, 100000, 10000, [1 2 3 4 5])
 
 % write string function to just get job title (not examples)
 get_title(data{400,1}) % Works!! 
