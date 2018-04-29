@@ -15,11 +15,11 @@ function search_results = find_by_search(data, keys)
     % now we have indices of all the rows containing at least one key. Sort
     % and get rid of repeats
     rows = unique(rows); 
-    search_results = cell(length(rows), c);
+    sub_search_data = cell(length(rows), c);
     count2 = 1;
-    for k = 1:length(rows)
-        for m = 1:c
-            search_results{count2,m} = data{rows(k),m};
+    for j = 1:length(rows)
+        for k = 1:c
+            sub_int_data{count2,k} = data{chosen_rows(j),k};
         end
         count2 = count2 + 1; 
         %fprintf("%d\n", data{r,8}); (used this as a test)
