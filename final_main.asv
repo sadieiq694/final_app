@@ -25,7 +25,7 @@ criteria_search(data, 2, 100000, 10000, [1 2 3 4 5])
 % write string function to just get job title (not examples)
 get_title(data{400,1}) % Works!! 
 % function to get list of titles
-titles = title_
+titles = find_titles(data);
 
 % write string function to get list of example careers for a given job
 % title/category
@@ -35,6 +35,11 @@ get_examples(data{400,1}) % kind of works, might wanna make it prettier
 
 % write search function to find jobs based on keywords
 search_results = find_by_search(data, ["math", "engineer"]) % works!!
+
+
+%
+Soil and plant scientists
+app.search_results = find_by_search(app.data, [value]); % works!!
 
 
 

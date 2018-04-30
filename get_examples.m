@@ -1,6 +1,5 @@
 function ex = get_examples(str)
     star_idx = strfind(str, "*");
-    ex = 
     %ex_str = str(star_idx(1)+2:end);
     % one more job than there is *
     % MAYBE CHANGE TO BE MORE COSMETICALLY PLEASING??
@@ -9,5 +8,5 @@ function ex = get_examples(str)
     %    name = str(star_idx(i)+1:star_idx(i+1)-1);
     %    ex(i) = name; 
     %end
-    ex = name_ex(star_idx+2:end)
+    ex = str(star_idx+2:end);
 end

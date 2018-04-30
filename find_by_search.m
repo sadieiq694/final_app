@@ -1,27 +1,35 @@
-function search_results = find_by_search(data, keys)
-    rows = zeros(1,4);
-    [r c] = size(data); 
+% NOW WORKS FOR ENTERING EXACT NAME ONLY!!!!
+function search_results = find_by_search(data, key)
+    rows = [0];
+    [r, c] = size(data); 
     count = 1;
-    for i = 1:length(keys)
-        rec = keys(i);
-        for j = 1:r
-            name = data{j,1};
-            if(contains(name, rec))
-                rows(count) = j;
-                count = count + 1; 
-            end
+    fprintf("%d\n",r);
+    fprintf("%s\n", key);
+    for i = 1:r
+        name = get_title(data{i,1});
+        %fprintf("%s\n",name);
+        if(strcmp(name, key))
+            rows(count) = i;
+            fprintf("%s\n", name);
+            count = count + 1; 
         end
     end
-    % now we have indices of all the rows containing at least one key. Sort
+    fprintf("%d\n",length(rows));
+    fprintf("%d\n",rows);
+    % now we have indices of the row containing the key. Sort
     % and get rid of repeats
-    rows = unique(rows); 
-    search_results = cell(length(rows), c);
-    count2 = 1;
-    for k = 1:length(rows)
-        for m = 1:c
-            search_results{count2,m} = data{rows(k),m};
-        end
-        count2 = count2 + 1; 
-        %fprintf("%d\n", data{r,8}); (used this as a test)
+    if(rows(1)~=0)
+        %rows = unique(rows); 
+        search_results = cell(1, c);
+        %count2 = 1;
+        %for k = 1:length(rows)
+            for m = 1:c
+                search_results{1,m} = data{rows,m};
+            end
+            %count2 = count2 + 1; 
+            %fprintf("%d\n", data{r,8}); (used this as a test)
+        %end
+    else
+        search_results = "No Matches";
     end
 end
