@@ -5,3 +5,4 @@ function title_list = find_titles(data_list)
         title_list{1,i} = get_title(data_list{i, 1});
     end
 end
+

@@ -38,8 +38,9 @@ search_results = find_by_search(data, ["math", "engineer"]) % works!!
 
 
 %
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% API FUN TIME %%%
+
 stuff = webread('https://api.bls.gov/publicAPI/v2/timeseries/data/LNS13000000');
 % this is only for like 2 years >:( how do I get more!?!?!
 
@@ -54,21 +55,8 @@ API_data = stuff.Results.series.data;
 months = 1:27;
 
 plot(months, values)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+xticks(months);
+xticklabels({"1/16","","3/16","","5/16","","7/16","","9/16","","11/16","","1/17","","3/17","","5/17","","7/17","","9/17","","11/17","","1/18","","3/18"});
+ylabel("Number of Unemployed Civilians");
 
 
